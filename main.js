@@ -47,7 +47,7 @@ login({email: process.env.FB_LOGIN_EMAIL, password: process.env.FB_PASSWORD}, fu
         bot_send_msg(api,msg,ziko);
 
       else if(user=="thoth")
-        bot_send_msg(api,request.url.substring(7),projectGroup);
+        bot_send_msg(api,decodeURIComponent(request.url.substring(7)),projectGroup);
     } catch(err) {
       console.log(err);
     }
