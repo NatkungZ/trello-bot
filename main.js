@@ -3,7 +3,8 @@ var login = require("facebook-chat-api");
 // This is Ziko thread_id
 ziko=100000154047359;
 nutsu=1732352289;
-projectGroup=346408618882754;
+thoth_id=346408618882754;
+leafbox_id=507626336072914;
 
 // --------api------------
 function bot_send_msg(api,msg,thread_id){
@@ -45,9 +46,10 @@ login({email: process.env.FB_LOGIN_EMAIL, password: process.env.FB_PASSWORD}, fu
         bot_send_msg(api,msg,nutsu);
       else if(user=="ziko")
         bot_send_msg(api,msg,ziko);
-
       else if(user=="thoth")
-        bot_send_msg(api,decodeURIComponent(request.url.substring(7)),projectGroup);
+        bot_send_msg(api,decodeURIComponent(request.url.substring(7)),thoth_id);
+      else if(user=="leafbox")
+        bot_send_msg(api,decodeURIComponent(request.url.substring(9)),leafbox_id);
     } catch(err) {
       console.log(err);
     }
